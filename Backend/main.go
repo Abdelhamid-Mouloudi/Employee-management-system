@@ -1,9 +1,9 @@
 package main
 
 import (
+	"github.com/Abdelhamid-Mouloudi/go_employee_system_backend/config"
+	"github.com/Abdelhamid-Mouloudi/go_employee_system_backend/routes"
 	"github.com/gin-gonic/gin"
-	"github.com/your_project_path/config"
-	"github.com/your_project_path/routes"
 )
 
 func main() {

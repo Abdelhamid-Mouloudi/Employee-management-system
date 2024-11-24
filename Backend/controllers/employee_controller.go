@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/Abdelhamid-Mouloudi/go_employee_system_backend/config"
+	"github.com/Abdelhamid-Mouloudi/go_employee_system_backend/models"
 	"github.com/gin-gonic/gin"
-	"github.com/your_project_path/models"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"

@@ -1,8 +1,8 @@
 package routes
 
 import (
+	"github.com/Abdelhamid-Mouloudi/go_employee_system_backend/controllers"
 	"github.com/gin-gonic/gin"
-	"github.com/your_project_path/controllers"
 )
 
 func EmployeeRoutes(router *gin.Engine) {
