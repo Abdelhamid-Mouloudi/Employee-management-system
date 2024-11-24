@@ -1,0 +1,11 @@
+# Go-related files
+*.exe
+*.out
+*.log
+
+# Dependency files
+vendor/
+
+# System files
+.DS_Store
+Thumbs.db
