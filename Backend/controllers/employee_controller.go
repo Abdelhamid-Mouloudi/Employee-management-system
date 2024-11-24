@@ -13,7 +13,11 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-var employeeCollection *mongo.Collection = config.DB.Collection("users")
+var employeeCollection *mongo.Collection
+
+func InitEmployeeController() {
+	employeeCollection = config.DB.Collection("users")
+}
 
 // Get all employees
 func GetEmployees(c *gin.Context) {
