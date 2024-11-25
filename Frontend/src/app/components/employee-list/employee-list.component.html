@@ -1,0 +1,29 @@
+<div class="container">
+    <img src="../../assets/h-company-logo.png" class="logo-small" alt="Company Logo" />
+    <h2 class="text-center my-4">Employee List</h2>
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.firstName }} {{ employee.lastName }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.phoneNumber }}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" [routerLink]="['/employees/edit', employee.id]">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteEmployee(employee.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a routerLink="/employees/add" class="btn btn-success">Add Employee</a>
+  </div>
+  
