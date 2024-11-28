@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"context"
+	"log"
 	"net/http"
 	"time"
 
@@ -16,18 +17,33 @@ import (
 var employeeCollection *mongo.Collection
 
 func InitEmployeeController() {
+	if config.DB == nil {
+		log.Fatal("Database connection is not initialized")
+	} else {
+		log.Println("Database connection is available")
+	}
+
 	employeeCollection = config.DB.Collection("users")
+	if employeeCollection == nil {
+		log.Fatal("Failed to initialize employeeCollection")
+	}
+
+	log.Println("Employee collection initialized")
 }
 
 // Get all employees
 func GetEmployees(c *gin.Context) {
+	if employeeCollection == nil {
+		log.Fatal("Employee collection is not initialized")
+	}
+
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
 	var employees []models.Employee
 	cursor, err := employeeCollection.Find(ctx, bson.M{})
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to retrieve employees"})
 		return
 	}
 	defer cursor.Close(ctx)
@@ -35,7 +51,7 @@ func GetEmployees(c *gin.Context) {
 	for cursor.Next(ctx) {
 		var employee models.Employee
 		if err := cursor.Decode(&employee); err != nil {
-			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to decode employee"})
 			return
 		}
 		employees = append(employees, employee)
