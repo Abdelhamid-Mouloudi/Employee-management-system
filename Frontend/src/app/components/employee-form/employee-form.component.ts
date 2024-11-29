@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeService } from '../../../services/employee.service';
 import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-employee-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, HttpClientModule],
   templateUrl: './employee-form.component.html',
   styleUrls: ['./employee-form.component.css'],
 })
