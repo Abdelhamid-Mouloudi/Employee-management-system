@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../../services/employee.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-employee-list',
   standalone: true,
-  imports: [CommonModule, RouterModule, HttpClientXsrfModule],
+  imports: [CommonModule, RouterModule, HttpClientModule],
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.css'],
 })
