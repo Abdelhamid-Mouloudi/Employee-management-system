@@ -27,9 +27,12 @@ export class EmployeeListComponent implements OnInit {
   }
 
   deleteEmployee(id: string): void {
-    this.employeeService.deleteEmployee(id).subscribe(() => {
-      this.getEmployees();
-    });
+    if (confirm('Are you sure you want to delete this employee?')) {
+      this.employeeService.deleteEmployee(id).subscribe(() => {
+        alert('Employee deleted successfully!');
+        this.getEmployees();
+      });
+    }
   }
 }
 
