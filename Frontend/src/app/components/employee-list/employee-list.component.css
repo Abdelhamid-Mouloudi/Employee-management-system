@@ -11,7 +11,7 @@
 
 /* Logo Styling */
 .logo-small {
-  width: 200px; /* Larger size */
+  width: 200px;
   height: auto;
   margin-bottom: 5px;
 }
@@ -61,22 +61,22 @@ button {
 
 /* Edit Button */
 button.btn-primary {
-  background-color: #113c82; /* Green */
+  background-color: #113c82;
   color: white;
 }
 
 button.btn-primary:hover {
-  background-color: #0d2c6d; /* Darker green */
+  background-color: #0d2c6d; /* Darker blue */
 }
 
 /* Delete Button */
 button.btn-danger {
-  background-color: #555; /* Red */
+  background-color: #555;
   color: white;
 }
 
 button.btn-danger:hover {
-  background-color: #333; /* Darker red */
+  background-color: #333;
 }
 
 /* Add Employee Button */
@@ -95,4 +95,33 @@ a.btn-success {
 
 a.btn-success:hover {
   background-color: #0d2c6d; /* Darker blue */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .logo-small {
+    width: 150px;
+    margin-bottom: 10px;
+  }
+
+  .table {
+    font-size: 12px;
+  }
+
+  button {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin-right: 5px;
+  }
+
+  a.btn-success {
+    width: 100%; /* Make "Add Employee" button full-width */
+    padding: 10px;
+    font-size: 14px;
+  }
 }

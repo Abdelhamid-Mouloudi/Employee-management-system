@@ -68,3 +68,41 @@ button {
 button:hover {
   background-color: #0d2c6d; /* Darker blue */
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .logo-large {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    flex-direction: column; /* Stack label and input */
+    align-items: flex-start; /* Align inputs to the left */
+  }
+
+  .form-group label {
+    margin-bottom: 5px; /* Add spacing between label and input */
+    text-align: left; /* Align labels to the left */
+    width: 100%; /* Make label take the full width */
+  }
+
+  .form-control {
+    width: 100%; /* Make input take the full width */
+  }
+
+  button {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
