@@ -83,4 +83,3 @@ The backend provides the following RESTful API endpoints:
 - **Gin Framework**
 #### Frontend:
 - **Angular**
-- **Bootstrap**
